@@ -6,9 +6,9 @@
 
 ##### Accessing and constructing collection
 
-| Constructor                             | Descriptions                                                 |
-| --------------------------------------- | :----------------------------------------------------------- |
-| Collection(name, schema=None, **kwargs) | Return the collection corresponding to name. Create a new one if not existed. |
+| Methods                                          | Descriptions                                                 |
+| ------------------------------------------------ | :----------------------------------------------------------- |
+| pymilvus.Collection(name, schema=None, **kwargs) | Return the collection corresponding to name. Create a new one if not existed. |
 
 
 
@@ -28,27 +28,29 @@
 
 | Methods                                                      | Descriptions                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| pymilvus.Collection.drop()                                   | Drop the collection, as well as its indexes.                 |
-| pymilvus.Collection.load(field_names=None, index_names=None, partition_names=None, **kwargs) | Load the collection from disk to memory.                     |
-| pymilvus.Collection.release()                                | Release the collection from memory.                          |
-| pymilvus.Collection.insert(data, **kwargs)                   | Insert data into the collection, or into one of its partitions. |
-| pymilvus.Collection.search(data, limit, params, expr=None, partition_names=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. |
+| Collection.drop()                                            | Drop the collection, as well as its indexes.                 |
+| Collection.load(field_names=None, index_names=None, partition_names=None, **kwargs) | Load the collection from disk to memory.                     |
+| Collection.release()                                         | Release the collection from memory.                          |
+| Collection.insert(data, **kwargs)                            | Insert data into the collection, or into one of its partitions. |
+| Collection.search(data, limit, params, expr=None, partition_names=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. |
 
 
 
 ##### Accessing and constructing partition
 
-| Methods                                       | Descriptions                                                 |
-| --------------------------------------------- | ------------------------------------------------------------ |
-| pymilvus.Collection.partitions                | Return all partitions of the collection.                     |
-| pymilvus.Collection.partition(partition_name) | Return the partition corresponding to name. Create a new one if not existed. |
+| Methods                                  | Descriptions                                                 |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| Collection.partitions                    | Return all partitions of the collection.                     |
+| Collection.partition(partition_name)     | Return the partition corresponding to name. Create a new one if not existed. |
+| Collection.has_partition(partition_name) | Checks if a specified partition exists.                      |
 
 
 
 ##### Accessing and constructing index
 
-| Methods                               | Descriptions                                                 |
-| ------------------------------------- | ------------------------------------------------------------ |
-| pymilvus.Collection.indexes           | Return all indexes of the collection.                        |
-| pymilvus.Collection.index(index_name) | Return the index corresponding to name. Create a new one if not existed. |
+| Methods                          | Descriptions                                                 |
+| -------------------------------- | ------------------------------------------------------------ |
+| Collection.indexes               | Return all indexes of the collection.                        |
+| Collection.index(index_name)     | Return the index corresponding to name. Create a new one if not existed. |
+| Collection.has_index(index_name) | Checks if a specified Index exists.                          |
 
