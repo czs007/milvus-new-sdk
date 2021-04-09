@@ -53,7 +53,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Collection.indexes                                           | Return all indexes of the collection.                        |
 | Collection.index(index_name="_default")                      | Return the index corresponding to name. Return None if not existed. |
-| Collection.create_index(field_name, index_params, index_name="_default") | Create index on a specified column according to the index parameters. |
+| Collection.create_index(field_name, index_params, index_name="_default") | Create index on a specified column according to the index parameters. Return Index Object. |
 | Collection.has_index(index_name="_default")                  | Checks if a specified Index exists.                          |
 | Collection.drop_index(index_name="_default")                 | Drop index and its corresponding index files.                |
 
