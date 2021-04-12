@@ -1,5 +1,5 @@
-| Properties              | Descriptions                           |
-| ----------------------- | -------------------------------------- |
+| Methods              | Descriptions                           |
+| -------------------- | -------------------------------------- |
 | Schema(fields=None, **kwargs) | Construct a schema object. Fields is a list, every item in fields is a field which must contain name, type, and if the field is a vector field, it can contain index parameters. |
 | Schema.add_field(field) | Add a field to schema, the field is a dict which must contain name, type, and if the field is a vector field, it can contain index parameters. |
 | Schema.fields() | Return all fields.  |

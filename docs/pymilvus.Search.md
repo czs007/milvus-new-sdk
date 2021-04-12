@@ -1,10 +1,10 @@
-| Properties                                                   | Descriptions               |
+| Methods                                                      | Descriptions               |
 | ------------------------------------------------------------ | -------------------------- |
 | Search(collection, data, limit, params, expr=None, partition_names=None, fields=None, **kwargs) | Construct a Search object. |
 | Search.execute()                                             | Return the search result.  |
 
 
-| Properties                  | Descriptions                                                 |
+| Methods                     | Descriptions                                                 |
 | --------------------------- | ------------------------------------------------------------ |
 | SearchResult(grpc_response) | Construct a Search Result from response.                     |
 | SearchResult.__iter__()     | Iterate the Search Result. Every iteration returns a `Hits` coresponding to a query. |
@@ -12,7 +12,7 @@
 | SearchResult.__len__()      | Return the number of query of Search Result.                 |
 
 
-| Properties       | Descriptions                                                 |
+| Methods          | Descriptions                                                 |
 | ---------------- | ------------------------------------------------------------ |
 | Hits(raw_data)   | Construct a Hits object from response.                       |
 | Hits.__iter__()  | Iterate the `Hits` object. Every iteration returns a `Hit` which represent a record coresponding to the query. |
@@ -22,7 +22,7 @@
 | Hits.distances() | Return the distances of all hit record.                      |
 
 
-| Properties     | Descriptions                                                 |
+| Methods        | Descriptions                                                 |
 | -------------- | ------------------------------------------------------------ |
 | Hit(raw_data)  | Construct a Hit object from response. A hit represent a record coresponding to the query. |
 | Hit.id()       | Return the id of the hit record.                             |
