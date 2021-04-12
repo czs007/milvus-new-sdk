@@ -42,7 +42,7 @@ every thing you need to know about PyMilvus.
 
    install
    tutorial
-   api
+   api/api
    param
    results
    changes
