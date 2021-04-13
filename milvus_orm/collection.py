@@ -5,7 +5,7 @@ class Collection(object):
     """
     Connection information is contained in kwargs.
     """
-    def __init__(self, name, schema=None, **kwargs):
+    def __init__(self, name, schema, **kwargs):
         self._name = name
         self._kwargs = kwargs
         self._schema = schema
@@ -62,9 +62,10 @@ class Collection(object):
     def insert(self, data, **kwargs):
         pass
 
-    def search(self, data, limit, params, expr=None, partition_names=None, fields=None, **kwargs):
+    def search(self, data, params, limit, expr="", partition_names=None, fields=None, **kwargs):
         pass
 
+    @property
     def partitions(self):
         pass
 
@@ -77,17 +78,18 @@ class Collection(object):
     def drop_partition(self, partition_name, **kwargs):
         pass
 
+    @property
     def indexes(self):
         pass
 
-    def index(self, index_name="_default"):
+    def index(self, index_name):
         pass
 
-    def create_index(self, field_name, index_params, index_name="_default", **kwargs):
+    def create_index(self, field_name, index_name, index_params, **kwargs):
         pass
 
-    def has_index(self, index_name="_default"):
+    def has_index(self, index_name):
         pass
 
-    def drop_index(self, index_name="_default", **kwargs):
+    def drop_index(self, index_name, **kwargs):
         pass

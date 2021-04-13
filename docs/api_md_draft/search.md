@@ -20,7 +20,7 @@
 | Hits[k]          | Return the kth `Hit` coresponding to the query.              | 参数k 类型 int | Hit对象                           |
 | Hits.__len__()   | Return the number of hit record.                             | /              | int                               |
 | Hits.ids       | Return the ids of all hit record.                            | /              | list(int)或者list(string)         |
-| Hits.distances() | Return the distances of all hit record.                      | /              | list(float)                       |
+| Hits.distances | Return the distances of all hit record.                      | /              | list(float)                       |
 
 
 | Methods        | Descriptions                                                 | 参数 | 返回值      |

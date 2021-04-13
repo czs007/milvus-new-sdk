@@ -35,9 +35,5 @@ class Index(object):
     def field_name(self):
         pass
 
-    @field_name.setter
-    def field_name(self, value):
-        pass
-
     def drop(self, **kwargs):
         pass

@@ -46,5 +46,5 @@ class Partition(object):
     def insert(self, data, **kwargs):
         pass
 
-    def search(self, data, limit, params, expr=None, fields=None, **kwargs):
+    def search(self, data, params, limit, expr=None, fields=None, **kwargs):
         pass
