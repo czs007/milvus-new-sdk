@@ -1,11 +1,18 @@
 from . import connections
 
 class Collection(object):
+    """This is a class coresponding to collection in milvus.
+    """
 
-    """
-    Connection information is contained in kwargs.
-    """
     def __init__(self, name, schema, **kwargs):
+        """Construct a collection by the name, schema and other parameters.
+        Connection information is contained in kwargs.
+
+        :param name: the name of collection
+        :type name: str
+        :param schema: the schema of collection
+        :type schema: class `schema.CollectionSchema`
+        """
         self._name = name
         self._kwargs = kwargs
         self._schema = schema

@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx_copybutton',
     'm2r',
+    'sphinx.ext.autosummary',
 ]
 
 
