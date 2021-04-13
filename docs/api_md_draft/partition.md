@@ -4,21 +4,21 @@
 
 ##### Manipulating and querying partition meta
 
-| Methods                         | Descriptions                           |
-| ------------------------------- | -------------------------------------- |
-| pymilvus.Partition.description  | Return the description text.           |
-| pymilvus.Partition.name         | Return the partition name.             |
-| pymilvus.Partition.is_empty     | Return whether the partition is empty. |
-| pymilvus.Partition.num_entities | Return the number of entities.         |
+| Methods                         | Descriptions                           | 参数 | 返回值  |
+| ------------------------------- | -------------------------------------- | ---- | ------- |
+| pymilvus.Partition.description  | Return the description text.           | /    | string  |
+| pymilvus.Partition.name         | Return the partition name.             | /    | string  |
+| pymilvus.Partition.is_empty     | Return whether the partition is empty. | /    | boolean |
+| pymilvus.Partition.num_entities | Return the number of entities.         | /    | int     |
 
 ##### Manipulating, loading, and querying partition
 
-| Methods                                                      | Descriptions                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| pymilvus.Partition.drop()                                    | Drop the partition, as well as its corresponding index files. |
-| pymilvus.Partition.load(field_names=None, index_names=None, **kwargs) | Load the partition from disk to memory.                      |
-| pymilvus.Partition.release()                                 | Release the partition from memory.                           |
-| pymilvus.Partition.insert(data, **kwargs)                    | Insert data into partition.                                  |
-| pymilvus.Partition.search(data, limit, params, expr=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. |
+| Methods                                                      | Descriptions                                                 | 参数                                                         | 返回值                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------- |
+| pymilvus.Partition.drop()                                    | Drop the partition, as well as its corresponding index files. | /                                                            | None或者Rase Exception        |
+| pymilvus.Partition.load(field_names=None, index_names=None, **kwargs) | Load the partition from disk to memory.                      | field_names  类型是list(string)<br />index_names类型是list(string)<br /> | None或者Rase Exception        |
+| pymilvus.Partition.release()                                 | Release the partition from memory.                           | /                                                            | None或者Rase Exception        |
+| pymilvus.Partition.insert(data, **kwargs)                    | Insert data into partition.                                  | data 类型是list-like(list, tuple, numpy.ndarray) 对象或者pandas.DataFrame，data的维度需要和列的数目对齐<br /> | None或者Rase Exception        |
+| pymilvus.Partition.search(data, params, limit, expr=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. | data是 list-like(list, tuple, numpy.ndarray)<br /><br />params 类型是 dict<br /><br />limit类型是int<br />expr 类型是string<br />fields类型是list(string) | Search对象或者Raise Exception |
 
 

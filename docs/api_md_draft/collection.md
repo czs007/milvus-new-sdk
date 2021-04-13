@@ -6,54 +6,54 @@
 
 ##### Accessing and constructing collection
 
-| Methods                                          | Descriptions                                                 |
-| ------------------------------------------------ | :----------------------------------------------------------- |
-| pymilvus.Collection(name, schema=None, **kwargs) | Return the collection corresponding to name. Create a new one if not existed. |
+| Methods                                 | Descriptions                                 | 参数                                                         | 返回值         |
+| --------------------------------------- | :------------------------------------------- | ------------------------------------------------------------ | -------------- |
+| Collection(name, schema=None, **kwargs) | 创建Collection，如果不存在同名的，则新建一个 | name 类型 string<br />schema 类型 CollectionSchema<br />kwargs，暂时为空 | Collection对象 |
+|                                         |                                              |                                                              |                |
 
 
 
 ##### Manipulating and querying collection meta
 
-| Properties              | Descriptions                            |
-| ----------------------- | --------------------------------------- |
-| Collection.schema       | Return the collection schema.           |
-| Collection.description  | Return the description text.            |
-| Collection.name         | Return the collection name.             |
-| Collection.is_empty     | Return whether the collection is empty. |
-| Collection.num_entities | Return the number of entities.          |
+| Properties              | Descriptions                  | 参数 | 返回值                  |
+| ----------------------- | ----------------------------- | ---- | ----------------------- |
+| Collection.schema       | Return the collection schema. | /    | CollectionSchema 对象   |
+| Collection.description  | 返回自定义描述                | /    | 类型 string，自定义描述 |
+| Collection.name         | 返回collection名字            | /    | 类型 string, 名字       |
+| Collection.is_empty     | 是否为空                      | /    | 类型 boolean            |
+| Collection.num_entities | 返回行数                      | /    | 类型int                 |
 
 
 
 ##### Manipulating, loading, and querying collection
 
-| Methods                                                      | Descriptions                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Collection.drop()                                            | Drop the collection, as well as its indexes.                 |
-| Collection.load(field_names=None, index_names=None, partition_names=None, **kwargs) | Load the collection from disk to memory.                     |
-| Collection.release()                                         | Release the collection from memory.                          |
-| Collection.insert(data, **kwargs)                            | Insert data into the collection, or into one of its partitions. |
-| Collection.search(data, limit, params, expr=None, partition_names=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. |
+| Methods                                                      | Descriptions                                                 | 参数                                                         | 返回值                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------- |
+| Collection.drop()                                            | Drop the collection, as well as its indexes.                 | /                                                            | None 或 Raise Exception       |
+| Collection.load(field_names=None, index_names=None, partition_names=None, **kwargs) | Load the collection from disk to memory.                     | field_names   类型是 list(string)<br />index_names 类型是 list(string)<br />partitions_names 类型是 list(string)<br />kwargs 暂时为空 | None或者Raise Exception       |
+| Collection.release()                                         | Release the collection from memory.                          | /                                                            | None或者Raise Exception       |
+| Collection.insert(data, partition_name ="", **kwargs)        | Insert data into the collection, or into one of its partitions. | data 类型是list-like(list, tuple, numpy.ndarray) 对象或者pandas.DataFrame，data的维度需要和列的数目对齐<br />partition_name 类型是 string | None或者Raise Exception       |
+| Collection.search(data, params, limit, expr="", partition_names=None, fields=None, **kwargs) | Vector similarity search with an optional boolean expression as filters. | data是 list-like(list, tuple, numpy.ndarray)<br /><br />params 类型是 dict<br /><br />limit 类型是 int <br />expr 类型是string<br />partitions_names类型是 list(string)<br />fields类型是list(string)<br />kwargs 目前为空 | Search对象或者Raise Exception |
 
 
 
 ##### Accessing and constructing partition
 
-| Methods                                   | Descriptions                                                 |
-| ----------------------------------------- | ------------------------------------------------------------ |
-| Collection.partitions                     | Return all partitions of the collection.                     |
-| Collection.partition(partition_name)      | Return the partition corresponding to name. Create a new one if not existed. |
-| Collection.has_partition(partition_name)  | Checks if a specified partition exists.                      |
-| Collection.drop_partition(partition_name) | Drop the partition and its corresponding index files.        |
+| Methods                                   | Descriptions                                                 | 参数                       | 返回值                  |
+| ----------------------------------------- | ------------------------------------------------------------ | -------------------------- | ----------------------- |
+| Collection.partitions                     | Return all partitions of the collection.                     | /                          | list(Partition对象)     |
+| Collection.partition(partition_name)      | Return the partition corresponding to name. Create a new one if not existed. | partition_name类型是string | Partition对象           |
+| Collection.has_partition(partition_name)  | Checks if a specified partition exists.                      | partition_name类型是string | boolean                 |
+| Collection.drop_partition(partition_name) | Drop the partition and its corresponding index files.        | partition_name类型是string | None或者Raise Exception |
 
 
 
 ##### Accessing and constructing index
 
-| Methods                                                      | Descriptions                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Collection.indexes                                           | Return all indexes of the collection.                        |
-| Collection.index(index_name="_default")                      | Return the index corresponding to name. Return None if not existed. |
-| Collection.create_index(field_name, index_params, index_name="_default") | Create index on a specified column according to the index parameters. Return Index Object. |
-| Collection.has_index(index_name="_default")                  | Checks if a specified Index exists.                          |
-| Collection.drop_index(index_name="_default")                 | Drop index and its corresponding index files.                |
+| Methods                                                      | Descriptions                                                 | 参数                                                         | 返回值                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------- |
+| Collection.indexes                                           | Return all indexes of the collection.                        | /                                                            | list(Index对象)               |
+| Collection.index(index_name)                                 | Return the index corresponding to name.                      | index_name类型是 string                                      | None或者Index对象             |
+| Collection.create_index(field_name, index_name, index_params) | Create index on a specified column according to the index parameters. Return Index Object. | field_name类型是string<br />index_params类型是dict<br />index_name类型是 string | Index对象或者 Raise Exception |
+| Collection.drop_index(index_name)                            | Drop index and its corresponding index files.                | index_name类型是string                                       | None或者Raise Exception       |
 
