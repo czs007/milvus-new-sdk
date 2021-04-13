@@ -3,7 +3,7 @@
 | Methods              | Descriptions                           | 参数描述 | 返回值 |
 | -------------------- | -------------------------------------- | -------------------- | -------------------- |
 | CollectionSchema(fields, auto_id = True, description="", **kwargs) | 构造一个CollectionSchema对象 | 参数fields是一个 list-like的对象，每个元素是FieldSchema对象<br />auto_id 类型 bool, 是否自动生成主键；<br />description 类型 string 自定义描述 | CollectionSchema对象或者Raise Exception |
-| CollectionSchema.fields() | 返回所有的列 | /                                                            | list，每个元素是一个 FieldSchema 对象 |
+| CollectionSchema.fields | 返回所有的列 | /                                                            | list，每个元素是一个 FieldSchema 对象 |
 | CollectionSchema.description | 返回自定义描述 | /                                                            | string, 自定义描述                    |
 | CollectionSchema.primary_field | 返回主键列的FieldSchema | /                                                            | FieldSchema对象                       |
 | CollectionSchema.auto_id | 是否自动生成主键 | /                                                            | bool                                  |

@@ -2,9 +2,9 @@
 
 Connections
 =========
-.. currentmodule:: arctern
+.. currentmodule:: milvus_orm
 
-Connections inherits pandas DataFrame. It is a DataFrame to store and process geometric data.
+Connections .
 
 Constructor
 -----------
@@ -14,17 +14,13 @@ Constructor
 
    Connections
 
-Connections Functions
+Methods
 ---------------------
 .. autosummary::
    :toctree: api/
 
-    Connections.to_geopandas
-    Connections.from_geopandas
-    Connections.to_json
-    Connections.from_file
-    Connections.to_file
-    Connections.crs
-    Connections.set_geometry
-    Connections.dissolve
-    Connections.merge
+    Connections.configure
+    Connections.add_connection
+    Connections.remove_connection
+    Connections.create_connection
+    Connections.get_connection

@@ -2,9 +2,9 @@
 
 Schema
 =========
-.. currentmodule:: arctern
+.. currentmodule:: milvus_orm
 
-Schema inherits pandas DataFrame. It is a DataFrame to store and process geometric data.
+CollectionSchema and FieldSchema.
 
 Constructor
 -----------
@@ -12,19 +12,23 @@ Constructor
    :toctree: api/
    :template: autosummaryclass.rst
 
-   Schema
+   CollectionSchema
+   FieldSchema
 
-Schema Functions
+CollectionSchema Attributes
 ---------------------
 .. autosummary::
    :toctree: api/
 
-    Schema.to_geopandas
-    Schema.from_geopandas
-    Schema.to_json
-    Schema.from_file
-    Schema.to_file
-    Schema.crs
-    Schema.set_geometry
-    Schema.dissolve
-    Schema.merge
+    CollectionSchema.fields
+    CollectionSchema.description
+    CollectionSchema.primary_field
+    CollectionSchema.auto_id
+
+FieldSchema Attributes
+---------------------
+.. autosummary::
+   :toctree: api/
+
+    FieldSchema.name
+    FieldSchema.is_primary

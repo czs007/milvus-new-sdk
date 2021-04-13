@@ -2,9 +2,12 @@
 
 Search
 =========
-.. currentmodule:: arctern
+.. currentmodule:: milvus_orm
 
-Search inherits pandas Series. It is a Series to store and process geometric data, and internally stores geometries as bytes objects.
+Search .
+SearchResult.
+Hits.
+Hit.
 
 Constructor 
 -----------
@@ -15,103 +18,43 @@ Constructor
    Search
 
 
-Attributes
-----------
-.. autosummary::
-   :toctree: api/
-
-   Search.is_valid
-   Search.is_simple
-   Search.is_empty
-   Search.length
-   Search.area
-   Search.geom_type
-   Search.centroid
-   Search.convex_hull
-   Search.npoints
-   Search.envelope
-   Search.boundary
-
-.. TODO: should we use this title?
-
-Constructing Geometry
+Search Methods
 ---------------------
 .. autosummary::
    :toctree: api/
 
-    Search.point
-    Search.polygon_from_envelope
-    Search.geom_from_geojson
-    Search.from_geopandas
-    Search.from_file
-    Search.as_geojson
-    Search.to_wkt
-    Search.to_wkb
-    Search.to_geopandas
-    Search.to_json
-    Search.to_file
+    Search.execute
 
-Processing Geometry
--------------------
+SearchResult Methods
+---------------------
 .. autosummary::
    :toctree: api/
 
-   Search.buffer
-   Search.precision_reduce
-   Search.intersection
-   Search.union
-   Search.make_valid
-   Search.simplify
-   Search.set_crs
-   Search.crs
-   Search.to_crs
-   Search.curve_to_line
-   Search.exterior
-   Search.difference
-   Search.symmetric_difference
-   Search.scale
-   Search.affine_transform
-   Search.translate
-   Search.rotate
+    SearchResult.__iter__
+    SearchResult.__len__    
+    SearchResult.done
 
-Spatial Relationship
---------------------
+Hits Methods
+---------------------
 .. autosummary::
    :toctree: api/
 
-   Search.geom_equals
-   Search.touches
-   Search.overlaps
-   Search.crosses
-   Search.contains
-   Search.intersects
-   Search.within
-   Search.disjoint
+    Hits.__iter__
+    Hits.__len__
 
-Measurement
------------
+Hits Attributes
+---------------------
+.. autosummary::
+   :toctree: api/
+   
+    Hits.ids
+    Hits.distances
+
+Hit Attributes
+---------------------
 .. autosummary::
    :toctree: api/
 
-   Search.distance_sphere
-   Search.distance
-   Search.hausdorff_distance
-
-Aggregation
------------
-.. autosummary::
-   :toctree: api/
-
-   Search.unary_union
-   Search.envelope_aggr
-
-Pandas Methods
---------------
-.. TODO: add describe here
-.. autosummary::
-   :toctree: api/
-
-   Search.isna
-   Search.notna
-   Search.fillna
-   Search.equals
+    Hit.id
+    Hit.score    
+    Hit.distance

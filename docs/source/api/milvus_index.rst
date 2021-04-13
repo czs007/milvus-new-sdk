@@ -4,7 +4,7 @@ Index
 =========
 .. currentmodule:: milvus_orm
 
-Index inherits pandas DataFrame. It is a DataFrame to store and process geometric data.
+Index .
 
 Constructor
 -----------
@@ -14,17 +14,12 @@ Constructor
 
    Index
 
-Index Functions
+Attributes
 ---------------------
 .. autosummary::
    :toctree: api/
 
-    Index.to_geopandas
-    Index.from_geopandas
-    Index.to_json
-    Index.from_file
-    Index.to_file
-    Index.crs
-    Index.set_geometry
-    Index.dissolve
-    Index.merge
+    Index.name
+    Index.params
+    Index.collection_name
+    Index.field_name
