@@ -16,7 +16,7 @@ setuptools.setup(
     description="Python ORM Sdk for Milvus(>= 2.0)",
     long_description=README,
     long_description_content_type='text/markdown',
-    url='https://github.com/czs007/milvus-new-sdk.git',
+    url='https://github.com/milvus-io/pymilvus-orm.git',
     license="Apache-2.0",
     packages=setuptools.find_packages(),
     include_package_data=True,
